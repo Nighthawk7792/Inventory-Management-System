@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Inventory Management System</h1>
+    <p class="lead">Track and manage your inventory items efficiently.</p>
+    <hr class="my-4">
+    <p>Get started by viewing or adding inventory items.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'items:item_list' %}" role="button">View Items</a>
+</div>
+{% endblock %}
