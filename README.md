@@ -38,9 +38,14 @@ A full-featured inventory management system built with Django and Bootstrap for 
 
 ## 📸 Screenshots
 
-| Dashboard | Product Management |
-|-----------|--------------------|
-| ![Dashboard](screenshots/dashboard.png) | ![Product Management](screenshots/products.png) |
+### Main Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Product Management
+| Feature | Screenshot |
+|---------|------------|
+| Add New Item | ![Add Item](screenshots/add-item.png) |
+| Inventory Report | ![Report](screenshots/report.png) |
 
 ### Installation
 
