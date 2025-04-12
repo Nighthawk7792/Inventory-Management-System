@@ -36,6 +36,12 @@ A full-featured inventory management system built with Django and Bootstrap for 
 - pip
 - Virtualenv (recommended)
 
+## 📸 Screenshots
+
+| Dashboard | Product Management |
+|-----------|--------------------|
+| ![Dashboard](screenshots/dashboard.png) | ![Product Management](screenshots/products.png) |
+
 ### Installation
 
 ```bash
@@ -122,3 +128,5 @@ Commit your changes (git commit -m 'Add some AmazingFeature')
 Push to the branch (git push origin feature/AmazingFeature)
 
 Open a Pull Request
+
+
