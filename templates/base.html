@@ -20,10 +20,11 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container">
-            <a class="navbar-brand" href="/">Inventory System</a>
+            <a class="navbar-brand" href="{% url 'items:item_list' %}">Inventory System</a>
             <div class="navbar-nav">
-                <a class="nav-link" href="{% url 'items:item_list' %}">Items</a>
+                <a class="nav-link" href="{% url 'items:item_list_alt' %}">Items</a>
                 <a class="nav-link" href="{% url 'items:item_create' %}">Add Item</a>
+        
             </div>
         </div>
     </nav>

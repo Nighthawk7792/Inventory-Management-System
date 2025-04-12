@@ -7,8 +7,8 @@ def home(request):
     return render(request, 'home.html')
 
 def item_list(request):
-    # whatever logic you have
-    return render(request, 'items/item_list.html')
+    items = Item.objects.all().order_by('-updated_at')
+    return render(request, 'items/item_list.html', {'items': items})
 
 
 def item_detail(request, pk):
@@ -17,18 +17,15 @@ def item_detail(request, pk):
     return render(request, 'items/item_detail.html', {'item': item})
 
 def item_create(request):
-    """Create a new inventory item"""
     if request.method == 'POST':
         form = ItemForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('items:item_list')
+            new_item = form.save()
+            print(f"Saved new item: {new_item.name}")  # Debug line
+            return redirect('items:item_list')  # Make sure this matches your URL name
     else:
         form = ItemForm()
-    return render(request, 'items/item_form.html', {
-        'form': form,
-        'title': 'Add New Item'
-    })
+    return render(request, 'items/item_form.html', {'form': form})
 
 def item_update(request, pk):
     """Update an existing inventory item"""
@@ -46,9 +43,8 @@ def item_update(request, pk):
     })
 
 def item_delete(request, pk):
-    """Delete an inventory item"""
     item = get_object_or_404(Item, pk=pk)
     if request.method == 'POST':
         item.delete()
         return redirect('items:item_list')
-    return render(request, 'items/confirm_delete.html', {'item': item})
+    return render(request, 'items/item_confirm_delete.html', {'item': item})
